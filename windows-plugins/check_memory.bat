@@ -1,7 +1,7 @@
-:: check_memory.bat plugin to icinga and nagios /MTr
+:: check_memory.bat plugin to icinga and nagios 
 ::
 ::
-:: check_memory.bat %Warning %Critical%
+:: 
 ::
 :: 
 
@@ -43,16 +43,16 @@ goto unknown
 
 
 :warning
-echo MEMORY WARNING - Free: %FreeMemory%KB;; Used: %UsedMemory%KB;; Total: %TotalMemory%KB;; ^| %perf_data%
+echo MEMORY WARNING - %UsedMemoryPct%%% Used - Free: %FreeMemory%KB;; Used: %UsedMemory%KB;; Total: %TotalMemory%KB;; ^| %perf_data%
 exit /b 1
 
 :critical
-echo MEMORY CRITICAL - Free: %FreeMemory%KB;;Used: %UsedMemory%KB;; Total: %TotalMemory%KB;; ^| %perf_data%
+echo MEMORY CRITICAL - %UsedMemoryPct%%% Used - Free: %FreeMemory%KB;;Used: %UsedMemory%KB;; Total: %TotalMemory%KB;; ^| %perf_data%
 exit /b 2
 
 :ok
-echo MEMORY OK - Free: %FreeMemory%KB;; Used: %UsedMemory%KB;; Total: %TotalMemory%KB;; ^| %perf_data%
+echo MEMORY OK - %UsedMemoryPct%%% Used - Free: %FreeMemory%KB;; Used: %UsedMemory%KB;; Total: %TotalMemory%KB;; ^| %perf_data%
 exit /b 0
 :unknown
-echo MEMORY UNKNOWN - Free: %FreeMemory%KB;; Used: %UsedMemory%KB;; Total: %TotalMemory%KB;; ^| %perf_data%
+echo MEMORY UNKNOWN - %UsedMemoryPct%%% Used - Free: %FreeMemory%KB;; Used: %UsedMemory%KB;; Total: %TotalMemory%KB;; ^| %perf_data%
 exit /b 3
